@@ -58,11 +58,9 @@ run without installed Maven distributions or research datasets.
   measurement workflow is `scripts/final_evidence_runner.py`.
 
 Experiment runners consume workspace inputs such as `samples/scale_samples.csv`,
-frozen project snapshots and earlier-stage metadata. Those inputs are not part
-of this code release. Analysis and adjudication scripts expect their documented
+frozen project snapshots and earlier-stage metadata. The anonymized replication archive at the repository root supplies those inputs. Analysis and adjudication scripts expect their documented
 result-file schemas; some scripts encode study-specific case classifications.
-The code release therefore supports source inspection and offline control tests;
-reproducing a study run also requires preparing its input workspace.
+The release supports source inspection, offline control tests and captured-result reanalysis; new measurements additionally require runtime configuration and artifact materialization.
 
 `plan_from_model` extracts effective-model execution declarations; it does not
 capture an actual lifecycle execution plan. Root `-N validate` records concern
@@ -70,8 +68,39 @@ the root model. The synthetic controls provide separate execution observations.
 
 ## Release contents
 
-The committed files comprise source code, source build descriptors, runtime
-configuration examples and usage documentation. The release excludes manuscript
-sources/PDFs, empirical CSVs, raw logs, project checkouts, downloaded third-party
-source, Maven/JDK binaries and dependency caches. `CODE_MANIFEST.json` lists the
-released files and their SHA-256 hashes.
+The committed source includes measurement and analysis code, synthetic projects, tests,
+runtime configuration examples and documentation. `CODE_MANIFEST.json` records
+SHA-256 hashes for the source files. The anonymized replication archives ([part 1](maventwin-replication-part1-20261003.zip), [part 2](maventwin-replication-part2-20261003.zip)) at the repository root includes empirical CSVs, frozen revision lists and POM snapshots, captured models
+and graphs, command records, necessary logs, artifact hash manifests and generated
+supplementary tables. Manuscript files, runtime distributions, complete third-party
+source checkouts and binary dependency caches are obtained separately.
+
+## Supplementary experiments
+
+`supplemental/` contains common-seed offline graph probes, JDK and target sensitivity,
+minimal-POM controls, full-checkout validation, lifecycle model observers, package
+plan capture, bounded packaging, full-reactor/targeted tests, migration application,
+acquisition characterization, XML controls, and observation-level correspondence.
+`ObserverLate.java` calculates ordered lifecycle plans after lifecycle participants
+and the measurement goal; it does not execute the requested planned phase.
+
+Configure the workspace with `scripts/configure_runtime.py`, then set
+`MAVENTWIN_WORKSPACE_ROOT` and `MAVENTWIN_EXPERIMENT_ROOT` to prepared input and output
+directories. Measurement scripts require the recorded input schemas, frozen commits,
+artifact materialization and selected-case records. Supplementary runners use Windows
+Java launchers, bounded process execution, separate copied repositories and source copies.
+
+With a prepared replication workspace, regenerate captured-result tables using:
+
+```powershell
+python supplemental/reproduce_report.py --workspace C:/replication/workspace --experiment-root C:/replication/workspace/supplementary_results
+```
+
+Add `--figures` with matplotlib installed to regenerate the layer-count figure.
+This command analyzes captured results without contacting external repositories.
+The study uses deterministic observation correspondence and post-migration measurements.
+Independent human annotation was not conducted.
+
+Download both replication parts and extract both into the same directory. Enter
+`maventwin-replication/`, then run the captured-result command above. SHA-256
+checksums for both archives are in `maventwin-replication-20261003.sha256.txt`.

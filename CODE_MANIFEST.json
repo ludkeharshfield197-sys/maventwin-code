@@ -7,8 +7,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 352,
-      "sha256": "ac999fb3ea9a29615467b46c7fdb49a371cfad103fd5471e089ba3198b7edba2"
+      "bytes": 492,
+      "sha256": "702f1910482356859c9f60a9367faef898c78b396cbf2445e52b53839c4de780"
     },
     {
       "path": "maventwin.py",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3769,
-      "sha256": "f7c9a2f264eba9d3637b22608f0aab1423110ca64f36825497a9d91b006e5920"
+      "bytes": 5998,
+      "sha256": "635fb82e16ca3c393e7bb33433d8c8b7ddd1529b2941c0e5934c13587b90e04b"
     },
     {
       "path": "scripts/adjudicate_baseline.py",
@@ -234,6 +234,176 @@
       "path": "scripts/write_baselines.py",
       "bytes": 1059,
       "sha256": "0f4e340708b51e86d19dc126f382d8a964e7d0bfcb6f54acc78fb67d5f45afaa"
+    },
+    {
+      "path": "supplemental/activity_metadata.py",
+      "bytes": 1648,
+      "sha256": "6697758aa9a05a58c62b1a36a27e8cad5c5cc11bc32d174a8add1ed1fcdba450"
+    },
+    {
+      "path": "supplemental/analysis.py",
+      "bytes": 5365,
+      "sha256": "a08dc3ae58f9d36ff12a926b59b01a1ce31a5365e7eff65e52c5fcfbacaa4a39"
+    },
+    {
+      "path": "supplemental/api_without_help.py",
+      "bytes": 853,
+      "sha256": "6d7c46b2d5a6432ba458a3761f843522ef83aee0838439229d8d017e194ddaaf"
+    },
+    {
+      "path": "supplemental/apply_cases.py",
+      "bytes": 2650,
+      "sha256": "cfbc0e8fb9322b1d9a31929ab43131474d80ff650ffb7360d6d8cafb6cf5caef"
+    },
+    {
+      "path": "supplemental/build_impact.py",
+      "bytes": 2474,
+      "sha256": "cdd061d95e47de0859f0b7fd6916e63947f8fc265886a009cf0e98e343695ed5"
+    },
+    {
+      "path": "supplemental/build_observer.py",
+      "bytes": 1262,
+      "sha256": "16738191d354d0b4c26fbbfe98a7697431b8617bbafeb923485b8a3ddaaf61ac"
+    },
+    {
+      "path": "supplemental/build_observer_late.py",
+      "bytes": 1177,
+      "sha256": "ae505210c7a605b75089696a7f1da596c348688d915dadb3a93415d712244841"
+    },
+    {
+      "path": "supplemental/campaign.py",
+      "bytes": 2205,
+      "sha256": "cf881981ff56a2330b8fa0ff9c99f1f735f8526fa62be05bbe1ae7b5ce22e7df"
+    },
+    {
+      "path": "supplemental/experiments.py",
+      "bytes": 14073,
+      "sha256": "23e7da4a7387c52d2342a927e6295ec6d3438e592ba16ae0a9355387e215d6ea"
+    },
+    {
+      "path": "supplemental/late_plan_completion.py",
+      "bytes": 1898,
+      "sha256": "1c10b1eec9ebc5f75688e083ec90201f33bc120448b17253bfd34141259857a3"
+    },
+    {
+      "path": "supplemental/late_plan_materialize.py",
+      "bytes": 1364,
+      "sha256": "051f44d8f176823bee3123549442515dc3b8dbad488512c402bafaf69e41ec8b"
+    },
+    {
+      "path": "supplemental/late_plans.py",
+      "bytes": 2419,
+      "sha256": "2ba85cdf3a903ea3be906fc29327fcdedde7436c37070ead103762f8893dd714"
+    },
+    {
+      "path": "supplemental/minimal_graphs.py",
+      "bytes": 1473,
+      "sha256": "8648c11d42ea6d01816124e015adebf128636aaf8e75ef5d5b576a92e019cb80"
+    },
+    {
+      "path": "supplemental/missingness.py",
+      "bytes": 4032,
+      "sha256": "6c192a9ad9dbe7d63caf2bcf077e1030e2a7e60c70dd104facfd121633c7096b"
+    },
+    {
+      "path": "supplemental/Observer.java",
+      "bytes": 3739,
+      "sha256": "62e76c0be1b7373745c669ef446fb0c83dd0a3d99a221881d4ee3ea3bc6f0e54"
+    },
+    {
+      "path": "supplemental/ObserverLate.java",
+      "bytes": 3371,
+      "sha256": "476b5a5e5df834f8c3d205f7e31fb6d58d8ac9f0639a0eaf0711389b9645f2e2"
+    },
+    {
+      "path": "supplemental/plan_recheck.py",
+      "bytes": 1912,
+      "sha256": "a476e28b7c734ac486593dfa5bc8f14c7d250224e7c1ca36d1d010c5267a3547"
+    },
+    {
+      "path": "supplemental/primary_summary.py",
+      "bytes": 3418,
+      "sha256": "1c513077f019ef6e5e4411f7fa52f653459da158f1ba82bdb989be981e0fce77"
+    },
+    {
+      "path": "supplemental/reactor_central_materialization.py",
+      "bytes": 2425,
+      "sha256": "82782301e4ab9252fdc3ee6362ce8d438d923c90719cf502e2ce6d8868771746"
+    },
+    {
+      "path": "supplemental/reactor_closure.py",
+      "bytes": 2294,
+      "sha256": "10528c6d27b8b359b202a3a7af2b1d971590fc03e367beb4c0c2144df664a8e8"
+    },
+    {
+      "path": "supplemental/reactor_followup.py",
+      "bytes": 4191,
+      "sha256": "01353a208bd7d46450d218e948af0919f4a655c71b22c9eca5860762d75ab85b"
+    },
+    {
+      "path": "supplemental/reactor_tests.py",
+      "bytes": 2108,
+      "sha256": "4ac343974f00e5e316c72d70f6428c404498f0630bd9b9f8659cf2f754d80717"
+    },
+    {
+      "path": "supplemental/README.md",
+      "bytes": 1533,
+      "sha256": "e1c2b0a9072aef48c085dff721bcacdf7d388fde7d4ba151f61c4d049cb52ae9"
+    },
+    {
+      "path": "supplemental/recover_remote_source.py",
+      "bytes": 1948,
+      "sha256": "6aba8fd5ca9e9278808db16f8d4cb8fd416e501ff261bafff57a926c07da4898"
+    },
+    {
+      "path": "supplemental/release_sensitivity.py",
+      "bytes": 1828,
+      "sha256": "905ab90f9793087d84bc936a2934431124fad8287ef942e1069e823d108cd6d6"
+    },
+    {
+      "path": "supplemental/reproduce_report.py",
+      "bytes": 1977,
+      "sha256": "ec39de2d1f911fc02b253c25ea17e13c36d8c3563e0c95588cf2d3ae546e3290"
+    },
+    {
+      "path": "supplemental/rq3_refine.py",
+      "bytes": 3670,
+      "sha256": "b41c1346704d55b3976a3fd72cdfcc00c3d6ba8a8f92a34cef930b5676bcdc32"
+    },
+    {
+      "path": "supplemental/run_instrument.py",
+      "bytes": 1296,
+      "sha256": "4395fe7b76ffc239c3f57fb21892e31d832ae367534ddb2adc774a92b5b333c9"
+    },
+    {
+      "path": "supplemental/serialization_controls.py",
+      "bytes": 3379,
+      "sha256": "a66f7bd1e16230a6df6aebbb0c177cd7f2eb16142a5a9042f234f6851dd07f16"
+    },
+    {
+      "path": "supplemental/summarize_experiments.py",
+      "bytes": 7324,
+      "sha256": "05224f755cc3348ae5cfa39dcfc2af7b6fa51f3265fc80cbe071b914bb711cf0"
+    },
+    {
+      "path": "supplemental/summarize_extended.py",
+      "bytes": 9563,
+      "sha256": "c6d6feaeba772fef61cf40e7fa8d37f94237406188675a671a442635feb8e882"
+    },
+    {
+      "path": "supplemental/target_sensitivity.py",
+      "bytes": 2154,
+      "sha256": "14292f1499514de1c84a04b79e95a6e08d547cc2409f05d7a69db2708b99e3c7"
+    },
+    {
+      "path": "supplemental/update_figures.py",
+      "bytes": 2322,
+      "sha256": "a16eec666b57f86eda09d249cf1a567c99f951598f375629b082d99530a0c158"
+    },
+    {
+      "path": "supplemental/validation_frozen.py",
+      "bytes": 845,
+      "sha256": "8ed1a1d38dacb8cfedf25c3cae0503278f7b02949c48b60522e130227d76daa9"
     },
     {
       "path": "synthetic/extension/pom.xml",

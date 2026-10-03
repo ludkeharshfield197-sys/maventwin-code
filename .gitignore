@@ -28,3 +28,8 @@ synthetic/runs/
 *.tex
 *.bib
 analysis_outputs/
+supplementary_results/
+supplemental/*.csv
+supplemental/*.json
+supplemental/figures/
+supplemental/before/
