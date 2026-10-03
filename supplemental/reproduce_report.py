@@ -12,11 +12,11 @@ def main():
     required=['final_evidence_v1/FINAL_PAPER_RESULTS.csv','final_evidence_v1/MODEL_DELTAS_FINAL.csv','artifacts/reviewer_revision/model/model_delta_provenance.csv','protocol/runtime_paths.json']
     missing=[x for x in required if not (root/x).exists()]
     if missing:p.error('Missing input files: '+', '.join(missing))
-    for script in ['analysis.py','missingness.py','summarize_experiments.py','summarize_extended.py','rq3_refine.py','serialization_controls.py']:
+    for script in ['primary_summary.py','analysis.py','missingness.py','summarize_experiments.py','summarize_extended.py','rq3_refine.py','serialization_controls.py']:
         r=subprocess.run([sys.executable,str(here/script)],cwd=root,env=env)
         if r.returncode:raise SystemExit(r.returncode)
     report={}
-    for name in ['ANALYSIS_SUMMARY','MISSINGNESS_SUMMARY','EXPERIMENT_SUMMARY','EXTENDED_SUMMARY','RQ3_REFINED_SUMMARY','SERIALIZATION_CONTROL_SUMMARY']:
+    for name in ['PRIMARY_STUDY_SUMMARY','ANALYSIS_SUMMARY','MISSINGNESS_SUMMARY','EXPERIMENT_SUMMARY','EXTENDED_SUMMARY','RQ3_REFINED_SUMMARY','SERIALIZATION_CONTROL_SUMMARY']:
         report[name]=json.loads((here/(name+'.json')).read_text(encoding='utf-8'))
     (here/'REPRODUCED_REPORT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     if a.figures:

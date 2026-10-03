@@ -10,7 +10,7 @@ for ext in ['pdf','png']:
     if src.exists() and not dst.exists():dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'pdf.fonttype':42,'ps.fonttype':42})
 fig,axes=plt.subplots(1,3,figsize=(10.3,4.25));fig.subplots_adjust(left=.03,right=.99,top=.88,bottom=.16,wspace=.16)
-items=[('Effective model',50,[20,18,12],['Source-POM linked','Runtime/default','Unresolved'],['#0072B2','#009E73','#E69F00']),('Dependency graph',53,[2,51],['Different','Identical'],['#D55E00','#B7C9D6']),('Root validation',47,[36,3,1,7],['Pass/pass','Pass/fail','Fail/pass','Fail/fail'],['#009E73','#D55E00','#56B4E9','#9A7AB5'])]
+items=[('Effective model',50,[20,18,12],['Source-POM linked','Runtime/default','Unresolved'],['#0072B2','#009E73','#E69F00']),('Dependency graph',53,[2,51],['Different','Identical'],['#D55E00','#B7C9D6']),('Root validation',47,[36,3,1,7],['Pass/pass','Pass/fail','Fail/pass','Other/mixed'],['#009E73','#D55E00','#56B4E9','#9A7AB5'])]
 for ax,(title,total,counts,labels,colors) in zip(axes,items):
     ax.set_title(f'{title}\n(n = {total})',fontsize=13,fontweight='bold',pad=12)
     left=0

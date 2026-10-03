@@ -87,7 +87,7 @@ def builds():
 
 def plans():
     rows=[]
-    for area in ['plan_recheck','central_plans','late_package_plans','late_central_plans']:
+    for area in ['plan_recheck','central_plans','late_package_plans','late_central_plans','late_central_materialized','late_central_completed']:
         for base in sorted((OUT/area).glob('*')):
             if not base.is_dir():continue
             vals={rt:[] for rt in ['m3','m4']};central={rt:[] for rt in vals}
@@ -113,7 +113,14 @@ def reactors():
                     p=base/'runs'/f'{rt}-r{n}/test_reports.json'
                     if p.exists():
                         tests=json.loads(p.read_text());counts[rt].append({k:sum(int(x.get(k,0) or 0) for x in tests) for k in ['tests','failures','errors','skipped']})
-            rows.append(dict(experiment=area,repo=base.name,runs=sum(map(len,rs.values())),m3=outcomes(rs['m3']),m4=outcomes(rs['m4']),m3_test_counts=json.dumps(counts['m3']),m4_test_counts=json.dumps(counts['m4'])))
+            artifacts=[]
+            for rt in ['m3','m4']:
+                for n in [1,2]:
+                    p=base/'runs'/f'{rt}-r{n}/artifacts.json'
+                    if p.exists():artifacts.append({x['path']:x['sha256'] for x in json.loads(p.read_text())})
+            common=set.intersection(*(set(x) for x in artifacts)) if len(artifacts)==4 else set()
+            identical=all(len({x[k] for x in artifacts})==1 for k in common) if common else ''
+            rows.append(dict(experiment=area,repo=base.name,runs=sum(map(len,rs.values())),m3=outcomes(rs['m3']),m4=outcomes(rs['m4']),m3_test_counts=json.dumps(counts['m3']),m4_test_counts=json.dumps(counts['m4']),common_artifact_paths=';'.join(sorted(common)),common_artifacts_identical=identical))
     csvwrite('REACTOR_AND_TESTS.csv',rows);return rows
 
 def main():
