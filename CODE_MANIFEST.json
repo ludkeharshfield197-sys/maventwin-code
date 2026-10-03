@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5998,
-      "sha256": "635fb82e16ca3c393e7bb33433d8c8b7ddd1529b2941c0e5934c13587b90e04b"
+      "bytes": 7367,
+      "sha256": "720f68a131ba5b5dc573985acfa553cf5a0d90620d92c9a97e8fbf1933327880"
     },
     {
       "path": "scripts/adjudicate_baseline.py",
@@ -276,6 +276,11 @@
       "sha256": "cf881981ff56a2330b8fa0ff9c99f1f735f8526fa62be05bbe1ae7b5ce22e7df"
     },
     {
+      "path": "supplemental/cohort_offline_recheck.py",
+      "bytes": 1818,
+      "sha256": "b08bf2ef28fdd73451c7c77db1bed3671575e44a9f37ffe1ef640444b730eea7"
+    },
+    {
       "path": "supplemental/experiments.py",
       "bytes": 14073,
       "sha256": "23e7da4a7387c52d2342a927e6295ec6d3438e592ba16ae0a9355387e215d6ea"
@@ -296,6 +301,11 @@
       "sha256": "2ba85cdf3a903ea3be906fc29327fcdedde7436c37070ead103762f8893dd714"
     },
     {
+      "path": "supplemental/maven_central_proxy.py",
+      "bytes": 2286,
+      "sha256": "24ad1be8e8fbc9e52a3b924dffaae3c12420d5afd5b3f2a5c4424e4c5f4226cd"
+    },
+    {
       "path": "supplemental/minimal_graphs.py",
       "bytes": 1473,
       "sha256": "8648c11d42ea6d01816124e015adebf128636aaf8e75ef5d5b576a92e019cb80"
@@ -314,6 +324,36 @@
       "path": "supplemental/ObserverLate.java",
       "bytes": 3371,
       "sha256": "476b5a5e5df834f8c3d205f7e31fb6d58d8ac9f0639a0eaf0711389b9645f2e2"
+    },
+    {
+      "path": "supplemental/openrewrite_comparison.py",
+      "bytes": 2161,
+      "sha256": "4e32a69e894f7f2e8169afc06817afe46d8aae2ed9a0baa8a24427209b2deb87"
+    },
+    {
+      "path": "supplemental/openrewrite_dependency_followup.py",
+      "bytes": 1408,
+      "sha256": "4f626a47acc1dbc38f9156067bdf4a733630b2933a5f5e074bca195c637f5b5b"
+    },
+    {
+      "path": "supplemental/openrewrite_frozen_validation.py",
+      "bytes": 1564,
+      "sha256": "d70f43b0dbdfc0508fa006e1ec91b04cfadc29470d28bedf42e431f3c9731224"
+    },
+    {
+      "path": "supplemental/openrewrite_full_checkouts.py",
+      "bytes": 2982,
+      "sha256": "99c2e9936ce140c4c1a7efc29b8b813488843920e70d8b404934d9e886a2ee48"
+    },
+    {
+      "path": "supplemental/openrewrite_post_checks.py",
+      "bytes": 712,
+      "sha256": "daca3de29c7b783da88b5c37922ae008e667d016ee839b33e6b73381eab7d946"
+    },
+    {
+      "path": "supplemental/openrewrite_retry.py",
+      "bytes": 1358,
+      "sha256": "2dffaee73243c7e6da2e63f649f09d70f55e2ff917f30ef798a064b413b85f7c"
     },
     {
       "path": "supplemental/plan_recheck.py",
@@ -362,8 +402,13 @@
     },
     {
       "path": "supplemental/reproduce_report.py",
-      "bytes": 1977,
-      "sha256": "ec39de2d1f911fc02b253c25ea17e13c36d8c3563e0c95588cf2d3ae546e3290"
+      "bytes": 2260,
+      "sha256": "4d016132895c0da46b81fae5dbbc9755981200cc12cd9fe855e1cda7308d6f57"
+    },
+    {
+      "path": "supplemental/reviewer_followup_analysis.py",
+      "bytes": 10860,
+      "sha256": "965920a218f1322a442c4a7071ae357270ba4470e546f236bd72003f2535e7fa"
     },
     {
       "path": "supplemental/rq3_refine.py",
@@ -374,6 +419,16 @@
       "path": "supplemental/run_instrument.py",
       "bytes": 1296,
       "sha256": "4395fe7b76ffc239c3f57fb21892e31d832ae367534ddb2adc774a92b5b333c9"
+    },
+    {
+      "path": "supplemental/selected_dependency_execution.py",
+      "bytes": 3153,
+      "sha256": "1a53714c773308e535a05e18351a0c960b5a253c05e2d7ae7613a19ddd1be7d1"
+    },
+    {
+      "path": "supplemental/SelectedDependencyProbe.java",
+      "bytes": 2113,
+      "sha256": "e68a6f5f5265346504c96cbd2c56e5df345c4163b63cb367718bc9ac31c72c46"
     },
     {
       "path": "supplemental/serialization_controls.py",
@@ -391,14 +446,19 @@
       "sha256": "c6d6feaeba772fef61cf40e7fa8d37f94237406188675a671a442635feb8e882"
     },
     {
+      "path": "supplemental/summarize_reviewer_followup.py",
+      "bytes": 7910,
+      "sha256": "cdd85e6cf38e183582566b142e916dc3e4f4d14b66f7915144259199e212f234"
+    },
+    {
       "path": "supplemental/target_sensitivity.py",
       "bytes": 2154,
       "sha256": "14292f1499514de1c84a04b79e95a6e08d547cc2409f05d7a69db2708b99e3c7"
     },
     {
       "path": "supplemental/update_figures.py",
-      "bytes": 2322,
-      "sha256": "a16eec666b57f86eda09d249cf1a567c99f951598f375629b082d99530a0c158"
+      "bytes": 2972,
+      "sha256": "4b300783b7127ed8ebfc6657efec0dcdcd1fc264432b40ec51a647fb37329da7"
     },
     {
       "path": "supplemental/validation_frozen.py",

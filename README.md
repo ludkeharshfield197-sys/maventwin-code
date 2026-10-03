@@ -58,7 +58,7 @@ run without installed Maven distributions or research datasets.
   measurement workflow is `scripts/final_evidence_runner.py`.
 
 Experiment runners consume workspace inputs such as `samples/scale_samples.csv`,
-frozen project snapshots and earlier-stage metadata. The anonymized replication archive at the repository root supplies those inputs. Analysis and adjudication scripts expect their documented
+frozen project snapshots and earlier-stage metadata. The anonymized replication archive at the repository root supplies those inputs. Analysis scripts expect their documented
 result-file schemas; some scripts encode study-specific case classifications.
 The release supports source inspection, offline control tests and captured-result reanalysis; new measurements additionally require runtime configuration and artifact materialization.
 
@@ -70,7 +70,7 @@ the root model. The synthetic controls provide separate execution observations.
 
 The committed source includes measurement and analysis code, synthetic projects, tests,
 runtime configuration examples and documentation. `CODE_MANIFEST.json` records
-SHA-256 hashes for the source files. The anonymized replication archives ([part 1](maventwin-replication-part1-20261003.zip), [part 2](maventwin-replication-part2-20261003.zip)) at the repository root includes empirical CSVs, frozen revision lists and POM snapshots, captured models
+SHA-256 hashes for the source files. The anonymized replication archives ([part 1](maventwin-replication-part1-20261003.zip), [part 2](maventwin-replication-part2-20261003.zip), [part 3](maventwin-replication-part3-20261003.zip)) at the repository root includes empirical CSVs, frozen revision lists and POM snapshots, captured models
 and graphs, command records, necessary logs, artifact hash manifests and generated
 supplementary tables. Manuscript files, runtime distributions, complete third-party
 source checkouts and binary dependency caches are obtained separately.
@@ -99,8 +99,29 @@ python supplemental/reproduce_report.py --workspace C:/replication/workspace --e
 Add `--figures` with matplotlib installed to regenerate the layer-count figure.
 This command analyzes captured results without contacting external repositories.
 The study uses deterministic observation correspondence and post-migration measurements.
-Independent human annotation was not conducted.
 
-Download both replication parts and extract both into the same directory. Enter
+Download all three replication parts and extract them into the same directory. Enter
 `maventwin-replication/`, then run the captured-result command above. SHA-256
-checksums for both archives are in `maventwin-replication-20261003.sha256.txt`.
+checksums for all three archives are in `maventwin-replication-20261003.sha256.txt`.
+
+## Cohort recheck and comparison baselines
+
+The release includes a common-seed offline ABBA recheck of all 61 acquired
+snapshots, including root validation for the fourteen originally unrun entries.
+reviewer_followup_analysis.py details summarizes original layer exclusions,
+configuration-field ablation, real same-runtime repeat controls, missing-outcome
+ranges and capture durations. summarize_reviewer_followup.py recomputes cohort,
+applied OpenRewrite recipe and selected-library API results from captured files.
+These analyses are included in reproduce_report.py.
+
+reviewer_followup_analysis.py benchmark runs the raw-byte and structured
+comparison timing experiment. Timing is specific to the executing host; recorded
+five-pass results and the separate Python allocation measurements are retained.
+cohort_offline_recheck.py, selected_dependency_execution.py,
+openrewrite_full_checkouts.py and openrewrite_frozen_validation.py execute new
+measurements with configured runtimes, source inputs and artifact repositories.
+The OpenRewrite baseline uses plugin 6.46.1 and rewrite-maven 8.90.4 on full
+checkouts; common-repository validation captures compare POMs before and after
+the recipe. OpenRewrite downloads use the official
+Maven Central registry through the supplied loopback relay; TLS verification
+remains enabled on the upstream requests.
