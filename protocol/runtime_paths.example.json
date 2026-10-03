@@ -1,0 +1,5 @@
+{
+  "jdk": "/absolute/path/to/jdk-21",
+  "m3": "/absolute/path/to/apache-maven-3.9.16",
+  "m4": "/absolute/path/to/apache-maven-4.0.0-rc-7"
+}
