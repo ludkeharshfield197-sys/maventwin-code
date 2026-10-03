@@ -29,7 +29,8 @@ def main():
             codes={rt:[x.get('command',{}).get('exit_code') for x in vs] for rt,vs in validations.items()}
             if all(all(x is not None for x in v) for v in codes.values()):
                 a,b=codes['m3'],codes['m4']
-                vc='PASS_PASS' if a==[0,0] and b==[0,0] else ('PASS_FAIL' if a==[0,0] and all(x!=0 for x in b) else ('FAIL_PASS' if b==[0,0] and all(x!=0 for x in a) else 'FAIL_FAIL'))
+                states=['PASS' if v==[0,0] else ('FAIL' if all(x!=0 for x in v) else 'MIXED') for v in [a,b]]
+                vc='MIXED' if 'MIXED' in states else '_'.join(states)
         rows.append(dict(repo=row['repo'],model_comparable=mc,model_positive=any(x['category'] not in ['MODEL_PROPERTY_ONLY','MODEL_REPRESENTATION_ONLY'] for x in d),graph_comparable=gc,graph_positive=bool(g),validation=vc))
     summary=dict(candidates=len(paper),frozen=sum(bool(re.fullmatch('[0-9a-f]{40}',x['commit'])) for x in paper),pom_complete=len(rows),model_comparable=sum(x['model_comparable'] for x in rows),model_positive=sum(x['model_positive'] for x in rows),plugin_version_field_repositories=len({x['repo'] for x in md if x['category']=='PLUGIN_VERSION_SELECTION_CHANGED'}),model_delta_rows=len(md),graph_comparable=sum(x['graph_comparable'] for x in rows),graph_positive=sum(x['graph_positive'] for x in rows),graph_delta_rows=len(gd),validation_distribution=dict(Counter(x['validation'] for x in rows)))
     dump(CODE/'PRIMARY_STUDY_SUMMARY.json',summary)
