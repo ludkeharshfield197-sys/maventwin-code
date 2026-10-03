@@ -58,16 +58,17 @@ def recipes():
             if record.exists():offline_post.append(json.loads(record.read_text())['exit_code'])
         pre={rt:[] for rt in ['m3','m4']}
         pre_frozen={rt:[] for rt in ['m3','m4']};post_frozen=[]
+        round_name='final' if (p.parent/'pre-final-m3-r1/command.json').exists() else 'frozen'
         for rt in pre:
             for n in [1,2]:
                 record=p.parent/f'pre-{rt}-r{n}/command.json'
                 if record.exists():pre[rt].append(json.loads(record.read_text())['exit_code'])
-                record=p.parent/f'pre-frozen-{rt}-r{n}/command.json'
+                record=p.parent/f'pre-{round_name}-{rt}-r{n}/command.json'
                 if record.exists():pre_frozen[rt].append(json.loads(record.read_text())['exit_code'])
         for n in [1,2]:
-            record=p.parent/f'post-frozen-m4-r{n}/command.json'
+            record=p.parent/f'post-{round_name}-m4-r{n}/command.json'
             if record.exists():post_frozen.append(json.loads(record.read_text())['exit_code'])
-        rows.append(dict(repo=obj['repo'],source_kind=obj.get('source_kind','frozen POM source copy'),plugin_version=obj['plugin_version'],recipe_artifact=obj['recipe_artifact'],pre_m3_exit_codes=json.dumps(pre['m3']),pre_m4_exit_codes=json.dumps(pre['m4']),pre_frozen_m3_exit_codes=json.dumps(pre_frozen['m3']),pre_frozen_m4_exit_codes=json.dumps(pre_frozen['m4']),exit_code=cmd['exit_code'],timeout=cmd['timeout'],seconds=cmd['elapsed_seconds'],changed_poms=sum(before.get(k)!=after.get(k) for k in set(before)|set(after)),post_m4_exit_codes=json.dumps(post),post_offline_m4_exit_codes=json.dumps(offline_post),post_frozen_m4_exit_codes=json.dumps(post_frozen),diagnostic=' | '.join(errors[:3])))
+        rows.append(dict(repo=obj['repo'],source_kind=obj.get('source_kind','frozen POM source copy'),plugin_version=obj['plugin_version'],recipe_artifact=obj['recipe_artifact'],validation_round=round_name,pre_m3_exit_codes=json.dumps(pre['m3']),pre_m4_exit_codes=json.dumps(pre['m4']),pre_frozen_m3_exit_codes=json.dumps(pre_frozen['m3']),pre_frozen_m4_exit_codes=json.dumps(pre_frozen['m4']),exit_code=cmd['exit_code'],timeout=cmd['timeout'],seconds=cmd['elapsed_seconds'],changed_poms=sum(before.get(k)!=after.get(k) for k in set(before)|set(after)),post_m4_exit_codes=json.dumps(post),post_offline_m4_exit_codes=json.dumps(offline_post),post_frozen_m4_exit_codes=json.dumps(post_frozen),diagnostic=' | '.join(errors[:3])))
     write('OPENREWRITE_COMPARISON.csv',rows);summary=dict(cases=len(rows),successful=sum(x['exit_code']==0 for x in rows),cases_with_edits=sum(x['changed_poms']>0 for x in rows),plugin_version='6.46.1',recipe_artifact='org.openrewrite:rewrite-maven:8.90.4',results=rows)
     dump(CODE/'OPENREWRITE_SUMMARY.json',summary);return summary
 
