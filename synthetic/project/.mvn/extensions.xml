@@ -1,0 +1,1 @@
+<extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0"><extension><groupId>com.maventwin.synthetic</groupId><artifactId>maventwin-lifecycle-extension</artifactId><version>1.0.0</version></extension></extensions>
