@@ -125,3 +125,31 @@ checkouts; common-repository validation captures compare POMs before and after
 the recipe. OpenRewrite downloads use the official
 Maven Central registry through the supplied loopback relay; TLS verification
 remains enabled on the upstream requests.
+
+## Final lifecycle and mechanism experiments — 2026-10-04
+
+The final supplement ([part 1](maventwin-final-supplement-part1-20261004.zip), [part 2](maventwin-final-supplement-part2-20261004.zip)) adds the offline ABBA lifecycle-plan captures for
+all 50 primary model-comparable frozen revisions. Calculated plan differences are
+5/50 for package,
+12/50 for install and
+25/50 for deploy.
+The requested phases are calculated, never executed. Central Publishing 0.11.0
+minimal counterfactuals and model-mutation probes localize the recurring omission
+to participant model mutation through a retained plugin wrapper. Stage traces
+refine the 27 initially unmapped rows in twelve repositories.
+
+Extract all three primary replication archives and all final-supplement parts into
+one directory, then enter `maventwin-replication/`. Recompute the new summaries:
+
+```powershell
+python supplemental/final_round_20261004/reproduce_final.py .
+```
+
+The command first expands compact shared/per-project artifact manifests into
+byte-identical captured JSON, then reanalyzes captured plans and stage models.
+No Maven execution or network access is required. The original reanalysis command
+above recomputes the primary and earlier supplementary tables. Each new experiment
+contains README.md, commands.json, results.csv, raw_outputs/ and sha256.txt.
+Archive checksums are in `maventwin-final-supplement-20261004.sha256.txt`. Original primary populations remain
+unchanged; this supplement is a follow-up on the 50 primary model pairs. Manuscript
+files and binary dependency caches are distributed separately.

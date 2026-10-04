@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7367,
-      "sha256": "720f68a131ba5b5dc573985acfa553cf5a0d90620d92c9a97e8fbf1933327880"
+      "bytes": 8987,
+      "sha256": "2e50f9e4aa7d4f657b99eed192af99a52f071c13e6b6cd1c8e5c1a62e9f6235a"
     },
     {
       "path": "scripts/adjudicate_baseline.py",
