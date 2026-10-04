@@ -149,7 +149,7 @@ The command first expands compact shared/per-project artifact manifests into
 byte-identical captured JSON, then reanalyzes captured plans and stage models.
 No Maven execution or network access is required. The original reanalysis command
 above recomputes the primary and earlier supplementary tables. Each new experiment
-contains README.md, commands.json, results.csv, raw_outputs/ and sha256.txt.
+contains README.md, commands.txt, commands.json, results.csv, raw_outputs/ and sha256.txt.
 Archive checksums are in `maventwin-final-supplement-20261004.sha256.txt`. Original primary populations remain
 unchanged; this supplement is a follow-up on the 50 primary model pairs. Manuscript
 files and binary dependency caches are distributed separately.
